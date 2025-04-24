@@ -16,7 +16,7 @@
 //     setMessages(newMessages);
 
 //     try {
-//       const res = await fetch('http://localhost:5000/api/chatbot-data', {
+//       const res = await fetch('https://gym-backend-l7s5.onrender.com/api/chatbot-data', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         body: JSON.stringify({ message: userInput })
@@ -111,7 +111,7 @@
 //     setShowSuggestions(false);
 
 //     try {
-//       const res = await fetch('http://localhost:5000/api/chatbot-data', {
+//       const res = await fetch('https://gym-backend-l7s5.onrender.com/api/chatbot-data', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         body: JSON.stringify({ message: input })
@@ -229,7 +229,7 @@ const ChatBot = () => {
     setIsTyping(true);
 
     try {
-      const res = await fetch('http://localhost:5000/api/chatbot-data', {
+      const res = await fetch('https://gym-backend-l7s5.onrender.com/api/chatbot-data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input })

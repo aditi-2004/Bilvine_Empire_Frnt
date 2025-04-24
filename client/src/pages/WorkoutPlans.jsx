@@ -14,7 +14,7 @@ const WorkoutPlans = () => {
   const fetchWorkoutPlan = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/workoutPlans?bodyType=${bodyType}&fitnessGoal=${fitnessGoal}&activityLevel=${activityLevel}`
+        `https://gym-backend-l7s5.onrender.com/api/workoutPlans?bodyType=${bodyType}&fitnessGoal=${fitnessGoal}&activityLevel=${activityLevel}`
       );
       if (!response.ok) {
         throw new Error('Network response was not ok');

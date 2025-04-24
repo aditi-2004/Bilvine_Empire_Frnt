@@ -18,7 +18,7 @@
 // // //   const fetchMealPlans = async () => {
 // // //     try {
 // // //       setLoading(true);
-// // //       const response = await fetch('http://localhost:5000/api/diet');
+// // //       const response = await fetch('https://gym-backend-l7s5.onrender.com/api/diet');
 // // //       if (!response.ok) {
 // // //         throw new Error(`HTTP error! status: ${response.status}`);
 // // //       }
@@ -194,7 +194,7 @@
 // //   const fetchMealPlans = async () => {
 // //     try {
 // //       setLoading(true);
-// //       const response = await fetch('http://localhost:5000/api/diet');
+// //       const response = await fetch('https://gym-backend-l7s5.onrender.com/api/diet');
 // //       if (!response.ok) {
 // //         throw new Error(`HTTP error! status: ${response.status}`);
 // //       }

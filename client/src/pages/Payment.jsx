@@ -124,7 +124,7 @@
 
 //     // Send email to user
 //     try {
-//       const response = await fetch('http://localhost:5000/api/invoice/send-invoice', {
+//       const response = await fetch('https://gym-backend-l7s5.onrender.com/api/invoice/send-invoice', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -543,7 +543,7 @@ const Payment = () => {
 
     if (paymentMethod === 'razorpay') {
       try {
-        const response = await fetch('http://localhost:5000/api/razorpay/create-order', {
+        const response = await fetch('https://gym-backend-l7s5.onrender.com/api/razorpay/create-order', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -589,7 +589,7 @@ const Payment = () => {
           description: 'Order Payment',
           order_id: orderId,
           handler: async function (response) {
-            const verifyResponse = await fetch('http://localhost:5000/api/razorpay/verify-payment', {
+            const verifyResponse = await fetch('https://gym-backend-l7s5.onrender.com/api/razorpay/verify-payment', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -606,7 +606,7 @@ const Payment = () => {
               return;
             }
 
-            const emailResponse = await fetch('http://localhost:5000/api/invoice/send-invoice', {
+            const emailResponse = await fetch('https://gym-backend-l7s5.onrender.com/api/invoice/send-invoice', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -652,7 +652,7 @@ const Payment = () => {
       }
     } else {
       try {
-        const emailResponse = await fetch('http://localhost:5000/api/invoice/send-invoice', {
+        const emailResponse = await fetch('https://gym-backend-l7s5.onrender.com/api/invoice/send-invoice', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

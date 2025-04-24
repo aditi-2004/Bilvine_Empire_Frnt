@@ -1,0 +1,730 @@
+{
+    "all": {
+      "plan": [
+        {
+          "day": 1,
+          "title": "Day 1: Full Body Flow",
+          "exercises": [
+            {
+              "name": "Mountain Pose",
+              "duration": 5,
+              "pose": "Tadasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/MountainArmsSide-tn146.png",
+              "tip": "Engage your quads, rotate your thighs inward, and let your arms hang naturally."
+            },
+            {
+              "name": "Downward Facing Dog",
+              "duration": 7,
+              "pose": "Adho Mukha Svanasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/DownwardDog-tn146.png",
+              "tip": "Keep both toes pointed towards the front of your mat and sink your heels toward the floor."
+            },
+            {
+              "name": "Cobra Pose",
+              "duration": 6,
+              "pose": "Bhujangasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/CobraFull-tn146.png",
+              "tip": "Root into your feet and lift your chest without pressing too hard with your hands."
+            },
+            {
+              "name": "Tree Pose",
+              "duration": 5,
+              "pose": "Vrksasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/TreePrayer_L-tn146.png",
+              "tip": "Focus on a point ahead to maintain balance and engage your core."
+            }
+          ],
+          "meditation": {
+            "name": "Full Awareness",
+            "duration": 8,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/ForwardBend-tn146.png",
+            "tip": "Focus on your breath and body sensations."
+          }
+        },
+        {
+          "day": 2,
+          "title": "Day 2: Mixed Practice",
+          "exercises": [
+            {
+              "name": "Warrior II",
+              "duration": 7,
+              "pose": "Virabhadrasana II",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/WarriorII_R-tn146.png",
+              "tip": "Extend your arms fully and gaze over your front hand."
+            },
+            {
+              "name": "Seated Forward Bend",
+              "duration": 6,
+              "pose": "Paschimottanasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SeatedForwardBend-tn146.png",
+              "tip": "Bend at your hips, not your waist, and keep your neck aligned."
+            },
+            {
+              "name": "Bridge Pose",
+              "duration": 6,
+              "pose": "Setu Bandha Sarvangasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Bridge-tn146.png",
+              "tip": "Root into your feet and lift your hips gently."
+            },
+            {
+              "name": "Child's Pose",
+              "duration": 5,
+              "pose": "Balasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/ChildTraditional-tn146.png",
+              "tip": "Rest your forehead on the ground and breathe deeply."
+            }
+          ],
+          "meditation": {
+            "name": "Mindful Breathing",
+            "duration": 10,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Maintain a steady breath rhythm and relax your mind."
+          }
+        },
+        {
+          "day": 3,
+          "title": "Day 3: Complete Practice",
+          "exercises": [
+            {
+              "name": "Sun Salutation",
+              "duration": 10,
+              "pose": "Surya Namaskar",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/DownwardDog-tn146.png",
+              "tip": "Flow smoothly with your breath, keeping movements coordinated."
+            },
+            {
+              "name": "Half Moon Pose",
+              "duration": 6,
+              "pose": "Ardha Chandrasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/HalfMoon_R-tn146.png",
+              "tip": "Keep your standing leg strong and gaze upward if comfortable."
+            },
+            {
+              "name": "Camel Pose",
+              "duration": 5,
+              "pose": "Ustrasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Camel-tn146.png",
+              "tip": "Lift your chest and avoid straining your neck."
+            },
+            {
+              "name": "Lotus Pose",
+              "duration": 5,
+              "pose": "Padmasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/LotusFull-tn146.png",
+              "tip": "Sit with a straight spine, using props if your hips are tight."
+            },
+            {
+              "name": "Corpse Pose",
+              "duration": 8,
+              "pose": "Savasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Corpse-tn146.png",
+              "tip": "Lie flat, relax completely, and focus on stillness."
+            }
+          ],
+          "meditation": {
+            "name": "Complete Relaxation",
+            "duration": 12,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/HeadToKnee_L-tn146.png",
+            "tip": "Let go of all tension and rest deeply."
+          }
+        }
+      ]
+    },
+    "standing": {
+      "plan": [
+        {
+          "day": 1,
+          "title": "Day 1: Standing Yoga Flow",
+          "exercises": [
+            {
+              "name": "Downward Facing Dog",
+              "duration": 10,
+              "pose": "Adho Mukha Svanasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/DownwardDog-tn146.png",
+              "tip": "Keep both toes pointed towards the front of your mat and sink your heels toward the floor."
+            },
+            {
+              "name": "Mountain Pose",
+              "duration": 5,
+              "pose": "Tadasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/MountainArmsSide-tn146.png",
+              "tip": "Engage your quads, rotate your thighs inward, and let your arms hang naturally."
+            },
+            {
+              "name": "Warrior I",
+              "duration": 8,
+              "pose": "Virabhadrasana I",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/WarriorI_R-tn146.png",
+              "tip": "Keep your back leg strong and your hips squared toward the front."
+            }
+          ],
+          "meditation": {
+            "name": "Relaxation Breathing",
+            "duration": 5,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Breathe deeply and evenly, focusing on relaxing your shoulders."
+          }
+        },
+        {
+          "day": 2,
+          "title": "Day 2: Standing Strength",
+          "exercises": [
+            {
+              "name": "Warrior II",
+              "duration": 7,
+              "pose": "Virabhadrasana II",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/WarriorII_R-tn146.png",
+              "tip": "Extend your arms fully and gaze over your front hand."
+            },
+            {
+              "name": "Extended Side Angle",
+              "duration": 6,
+              "pose": "Utthita Parvakonasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/WarriorIIForwardArmForward_R-tn146.png",
+              "tip": "Rest your forearm on your thigh to keep shoulders open."
+            },
+            {
+              "name": "Triangle Pose",
+              "duration": 6,
+              "pose": "Utthita Trikonasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/TriangleForward_R-tn146.png",
+              "tip": "Micro-bend your knees if needed to ease hamstring tension."
+            }
+          ],
+          "meditation": {
+            "name": "Focused Breathing",
+            "duration": 6,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/HeadToKnee_L-tn146.png",
+            "tip": "Concentrate on your breath, counting each inhale and exhale."
+          }
+        },
+        {
+          "day": 3,
+          "title": "Day 3: Standing Balance",
+          "exercises": [
+            {
+              "name": "Reverse Warrior",
+              "duration": 6,
+              "pose": "Viparita Virabhadrasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/WarriorII_R-tn146.png",
+              "tip": "Root into your front foot and engage your glutes."
+            },
+            {
+              "name": "Pyramid Pose",
+              "duration": 7,
+              "pose": "Parsvottanasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/PyramidPrayer_R-tn146.png",
+              "tip": "Use blocks to raise the floor if hamstrings are tight."
+            },
+            {
+              "name": "Raised Hands Pose",
+              "duration": 5,
+              "pose": "Urdhva Hastasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/MountainArmsSide-tn146.png",
+              "tip": "Reach for the sky while rooting down with your feet."
+            }
+          ],
+          "meditation": {
+            "name": "Energy Centering",
+            "duration": 8,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Plank-tn146.png",
+            "tip": "Visualize energy flowing from your core outward."
+          }
+        }
+      ]
+    },
+    "balancing": {
+      "plan": [
+        {
+          "day": 1,
+          "title": "Day 1: Balancing Focus",
+          "exercises": [
+            {
+              "name": "Tree Pose",
+              "duration": 7,
+              "pose": "Vrksasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/TreePrayer_L-tn146.png",
+              "tip": "Focus on a point ahead to maintain balance and engage your core."
+            },
+            {
+              "name": "Plank Pose",
+              "duration": 5,
+              "pose": "Plank",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Plank-tn146.png",
+              "tip": "Keep your hips and spine in a neutral position."
+            },
+            {
+              "name": "Eagle Pose",
+              "duration": 6,
+              "pose": "Garudasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Eagle_L-tn146.png",
+              "tip": "Wrap your arms and legs tightly and focus on a steady gaze."
+            }
+          ],
+          "meditation": {
+            "name": "Focus Breathing",
+            "duration": 6,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Concentrate on your breath, counting each inhale and exhale."
+          }
+        },
+        {
+          "day": 2,
+          "title": "Day 2: Balance & Strength",
+          "exercises": [
+            {
+              "name": "Half Moon Pose",
+              "duration": 6,
+              "pose": "Ardha Chandrasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/HalfMoon_R-tn146.png",
+              "tip": "Keep your standing leg strong and gaze upward if comfortable."
+            },
+            {
+              "name": "Warrior III",
+              "duration": 7,
+              "pose": "Virabhadrasana III",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/WarriorIII_R-tn146.png",
+              "tip": "Extend your back leg and arms while balancing on one leg."
+            },
+            {
+              "name": "Side Plank",
+              "duration": 5,
+              "pose": "Vasisthasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/PlankSide_L-tn146.png",
+              "tip": "Engage your core and keep your body in a straight line."
+            }
+          ],
+          "meditation": {
+            "name": "Grounding Meditation",
+            "duration": 8,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Plank-tn146.png",
+            "tip": "Feel rooted to the earth with each breath."
+          }
+        },
+        {
+          "day": 3,
+          "title": "Day 3: Advanced Balance",
+          "exercises": [
+            {
+              "name": "Dancer's Pose",
+              "duration": 8,
+              "pose": "Natarajasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/LordOfTheDance_R-tn146.png",
+              "tip": "Hold your foot with one hand and reach forward with the other."
+            },
+            {
+              "name": "Crow Pose",
+              "duration": 5,
+              "pose": "Bakasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Crow-tn146.png",
+              "tip": "Shift your weight forward and lift your feet slowly."
+            },
+            {
+              "name": "Extended Hand-To-Big-Toe Pose",
+              "duration": 6,
+              "pose": "Utthita Hasta Padangusthasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/StandingHandToToeFull_R-tn146.png",
+              "tip": "Use a wall for support if balancing is challenging."
+            }
+          ],
+          "meditation": {
+            "name": "Mind Stability",
+            "duration": 7,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Center your mind with slow, deliberate breaths."
+          }
+        }
+      ]
+    },
+    "backbend": {
+      "plan": [
+        {
+          "day": 1,
+          "title": "Day 1: Gentle Backbends",
+          "exercises": [
+            {
+              "name": "Cobra Pose",
+              "duration": 6,
+              "pose": "Bhujangasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/CobraFull-tn146.png",
+              "tip": "Root into your feet and lift your chest without pressing too hard with your hands."
+            },
+            {
+              "name": "Bridge Pose",
+              "duration": 8,
+              "pose": "Setu Bandha Sarvangasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Bridge-tn146.png",
+              "tip": "Root into your feet and lift your hips gently."
+            },
+            {
+              "name": "Sphinx Pose",
+              "duration": 5,
+              "pose": "Salamba Bhujangasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Sphinx-tn146.png",
+              "tip": "Keep your elbows under your shoulders and relax your lower back."
+            }
+          ],
+          "meditation": {
+            "name": "Stress Relief",
+            "duration": 7,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/SupineSpinalTwist_R-tn146.png",
+            "tip": "Focus on releasing tension with each exhale."
+          }
+        },
+        {
+          "day": 2,
+          "title": "Day 2: Intermediate Backbends",
+          "exercises": [
+            {
+              "name": "Camel Pose",
+              "duration": 7,
+              "pose": "Ustrasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Camel-tn146.png",
+              "tip": "Lift your chest and avoid straining your neck."
+            },
+            {
+              "name": "Upward Facing Dog",
+              "duration": 6,
+              "pose": "Urdhva Mukha Svanasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/UpwardDog-tn146.png",
+              "tip": "Lift your chest and thighs off the ground, engaging your back."
+            },
+            {
+              "name": "Locust Pose",
+              "duration": 5,
+              "pose": "Salabhasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Locust-tn146.png",
+              "tip": "Lift your chest and legs simultaneously with a strong core."
+            }
+          ],
+          "meditation": {
+            "name": "Heart Opening",
+            "duration": 8,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Plank-tn146.png",
+            "tip": "Open your heart space with deep, loving breaths."
+          }
+        },
+        {
+          "day": 3,
+          "title": "Day 3: Deep Backbends",
+          "exercises": [
+            {
+              "name": "Wheel Pose",
+              "duration": 8,
+              "pose": "Urdhva Dhanurasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Wheel-tn146.png",
+              "tip": "Press evenly into your hands and feet to lift your body."
+            },
+            {
+              "name": "King Pigeon Pose",
+              "duration": 7,
+              "pose": "Raja Kapotasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Pigeon-tn146.png",
+              "tip": "Keep your hips square and deepen the backbend gradually."
+            },
+            {
+              "name": "Bow Pose",
+              "duration": 6,
+              "pose": "Dhanurasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Bow-tn146.png",
+              "tip": "Hold your ankles and lift your chest and thighs off the ground."
+            }
+          ],
+          "meditation": {
+            "name": "Energy Circulation",
+            "duration": 9,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/energy-circulation.jpg",
+            "tip": "Imagine energy flowing through your spine with each breath."
+          }
+        }
+      ]
+    },
+    "seated": {
+      "plan": [
+        {
+          "day": 1,
+          "title": "Day 1: Basic Seated Poses",
+          "exercises": [
+            {
+              "name": "Easy Pose",
+              "duration": 5,
+              "pose": "Sukhasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+              "tip": "Sit cross-legged with props under your hips if needed."
+            },
+            {
+              "name": "Seated Forward Bend",
+              "duration": 7,
+              "pose": "Paschimottanasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SeatedForwardBend-tn146.png",
+              "tip": "Bend at your hips, not your waist, and keep your neck aligned."
+            },
+            {
+              "name": "Butterfly Pose",
+              "duration": 6,
+              "pose": "Baddha Konasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Butterfly-tn146.png",
+              "tip": "Let gravity stretch your inner thighs, using blocks under knees if high."
+            }
+          ],
+          "meditation": {
+            "name": "Breath Awareness",
+            "duration": 8,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/HalfMoon_R-tn146.png",
+            "tip": "Focus on the rhythm of your breath."
+          }
+        },
+        {
+          "day": 2,
+          "title": "Day 2: Hip Opening",
+          "exercises": [
+            {
+              "name": "Half Lord of the Fishes",
+              "duration": 8,
+              "pose": "Ardha Matsyendrasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/LordOfTheFishes_L-tn146.png",
+              "tip": "Extend your bottom leg if bending it behind is uncomfortable."
+            },
+            {
+              "name": "Cow Face Pose",
+              "duration": 6,
+              "pose": "Gomukhasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/KneePileBind_R-tn146.png",
+              "tip": "Stack your knees and reach your arms to clasp hands."
+            },
+            {
+              "name": "Wide-Angle Seated Forward Bend",
+              "duration": 7,
+              "pose": "Upavistha Konasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SplitsWide-tn146.png",
+              "tip": "Keep your back flat and rotate your pelvis forward."
+            }
+          ],
+          "meditation": {
+            "name": "Deep Relaxation",
+            "duration": 10,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/BlissfulBaby-tn146.png",
+            "tip": "Let your body sink into a calm state with slow breaths."
+          }
+        },
+        {
+          "day": 3,
+          "title": "Day 3: Advanced Seated Poses",
+          "exercises": [
+            {
+              "name": "Lotus Pose",
+              "duration": 6,
+              "pose": "Padmasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/LotusFull-tn146.png",
+              "tip": "Sit with a straight spine, using props if your hips are tight."
+            },
+            {
+              "name": "Sage Marichi Pose I",
+              "duration": 7,
+              "pose": "Marichyasana I",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/MarichiITraditional_L-tn146.png",
+              "tip": "Twist gently and keep your spine elongated."
+            },
+            {
+              "name": "Seated Side Bend",
+              "duration": 5,
+              "pose": "Parsva Sukhasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SeatedGate_L-tn146.png",
+              "tip": "Extend your arm overhead and lean to the side with control."
+            }
+          ],
+          "meditation": {
+            "name": "Mind-Body Connection",
+            "duration": 12,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Connect your breath with your movements for harmony."
+          }
+        }
+      ]
+    },
+    "resting": {
+      "plan": [
+        {
+          "day": 1,
+          "title": "Day 1: Restorative Rest",
+          "exercises": [
+            {
+              "name": "Corpse Pose",
+              "duration": 10,
+              "pose": "Savasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Corpse-tn146.png",
+              "tip": "Lie flat, relax completely, and focus on stillness."
+            },
+            {
+              "name": "Child's Pose",
+              "duration": 8,
+              "pose": "Balasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/ChildTraditional-tn146.png",
+              "tip": "Rest your forehead on the ground and breathe deeply."
+            },
+            {
+              "name": "Legs Up The Wall",
+              "duration": 7,
+              "pose": "Viparita Karani",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SupineStraddle-tn146.png",
+              "tip": "Keep your legs relaxed against the wall."
+            }
+          ],
+          "meditation": {
+            "name": "Body Scan Relaxation",
+            "duration": 12,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Scan your body from head to toe, releasing tension."
+          }
+        },
+        {
+          "day": 2,
+          "title": "Day 2: Gentle Recovery",
+          "exercises": [
+            {
+              "name": "Reclined Bound Angle",
+              "duration": 8,
+              "pose": "Supta Baddha Konasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/BoundAngle-tn146.png",
+              "tip": "Support your knees with blocks if they lift too high."
+            },
+            {
+              "name": "Reclined Spinal Twist",
+              "duration": 7,
+              "pose": "Supta Matsyendrasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SupineSpinalTwist_R-tn146.png",
+              "tip": "Keep your shoulders grounded as you twist."
+            },
+            {
+              "name": "Happy Baby Pose",
+              "duration": 6,
+              "pose": "Ananda Balasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/BlissfulBaby-tn146.png",
+              "tip": "Gently pull your knees toward your armpits without lifting your tailbone."
+            }
+          ],
+          "meditation": {
+            "name": "Stress Release",
+            "duration": 10,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Release stress with each slow exhale."
+          }
+        },
+        {
+          "day": 3,
+          "title": "Day 3: Deep Restoration",
+          "exercises": [
+            {
+              "name": "Supported Bridge Pose",
+              "duration": 7,
+              "pose": "Supported Setu Bandha Sarvangasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Bridge-tn146.png",
+              "tip": "Use a block under your sacrum for support."
+            },
+            {
+              "name": "Supported Fish Pose",
+              "duration": 8,
+              "pose": "Supported Matsyasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/FishPreparation-tn146.png",
+              "tip": "Place a block under your upper back to open your chest."
+            },
+            {
+              "name": "Extended Corpse Pose",
+              "duration": 12,
+              "pose": "Extended Savasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Corpse-tn146.png",
+              "tip": "Extend your arms and legs fully for deeper relaxation."
+            }
+          ],
+          "meditation": {
+            "name": "Deep Recovery",
+            "duration": 15,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Visualize healing energy restoring your body."
+          }
+        }
+      ]
+    },
+    "focus relief relaxation": {
+      "plan": [
+        {
+          "day": 1,
+          "title": "Day 1: Focus & Relief",
+          "exercises": [
+            {
+              "name": "Easy Pose",
+              "duration": 5,
+              "pose": "Sukhasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+              "tip": "Sit cross-legged with props under your hips if needed."
+            },
+            {
+              "name": "Child's Pose",
+              "duration": 8,
+              "pose": "Balasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/ChildTraditional-tn146.png",
+              "tip": "Rest your forehead on the ground and breathe deeply."
+            }
+          ],
+          "meditation": {
+            "name": "Mindful Relaxation",
+            "duration": 10,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Focus on calming thoughts and deep breaths."
+          }
+        },
+        {
+          "day": 2,
+          "title": "Day 2: Stress Relief Focus",
+          "exercises": [
+            {
+              "name": "Corpse Pose",
+              "duration": 10,
+              "pose": "Savasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Corpse-tn146.png",
+              "tip": "Lie flat, relax completely, and focus on stillness."
+            },
+            {
+              "name": "Legs Up The Wall",
+              "duration": 7,
+              "pose": "Viparita Karani",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SupineStraddle-tn146.png",
+              "tip": "Keep your legs relaxed against the wall."
+            }
+          ],
+          "meditation": {
+            "name": "Deep Calm",
+            "duration": 12,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Let your mind settle with each breath cycle."
+          }
+        },
+        {
+          "day": 3,
+          "title": "Day 3: Enhanced Focus",
+          "exercises": [
+            {
+              "name": "Seated Forward Bend",
+              "duration": 7,
+              "pose": "Paschimottanasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/SeatedForwardBend-tn146.png",
+              "tip": "Bend at your hips, not your waist, and keep your neck aligned."
+            },
+            {
+              "name": "Butterfly Pose",
+              "duration": 6,
+              "pose": "Baddha Konasana",
+              "image": "https://pocketyoga.com/assets/images/thumbnails146/Butterfly-tn146.png",
+              "tip": "Let gravity stretch your inner thighs, using blocks under knees if high."
+            }
+          ],
+          "meditation": {
+            "name": "Focused Relief",
+            "duration": 10,
+            "image": "https://pocketyoga.com/assets/images/thumbnails146/Easy-tn146.png",
+            "tip": "Direct your attention to a single point of focus."
+          }
+        }
+      ]
+    }
+  }

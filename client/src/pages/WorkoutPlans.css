@@ -1,10 +1,24 @@
 /* General Styling */
 body {
-  background: linear-gradient(to right, #1a202c , #1a202c ); /* Light bluish gradient */
+  background: linear-gradient(to right, #1a202c, #1a202c);
   font-family: 'Poppins', sans-serif;
   color: #fff;
   margin: 0;
   padding: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, rgba(63, 155, 146, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Filters Section */
@@ -12,47 +26,57 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px; /* Spacing between filter items */
+  gap: 15px;
   margin: 30px 0;
 }
 
 .filters select {
-  padding: 12px;
-  font-size: 16px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #1f4440;
   border-radius: 8px;
-  border: 1px solid #5a8dee;
-  background-color: #283e6b;
+  background: rgba(255, 255, 255, 0.1);
   color: #ddd;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.filters select:hover {
-  background-color: #365899;
-  border-color: #72a7ff;
+.filters select:hover,
+.filters select:focus {
+  border-color: #293433;
+  box-shadow: 0 0 12px rgba(45, 70, 67, 0.6);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Workout Plans Container */
 .workout-plans-container {
   padding: 50px;
   background: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   max-width: 1100px;
   margin: 50px auto;
+  border: 1px solid rgba(63, 155, 146, 0.1);
+  animation: slideInUp 1s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.workout-plans-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(43, 67, 65, 0.4);
 }
 
 /* Title Styling */
 .title {
   text-align: center;
-  color: #a0d2ff;
+  color: #304240;
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: 900;
   margin-bottom: 40px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(63, 155, 146, 0.5);
 }
 
 /* Plan Day Styling */
@@ -61,34 +85,40 @@ body {
   padding: 25px;
   margin-bottom: 25px;
   border-radius: 12px;
-  transition: 0.3s;
-  border-left: 5px solid #5a8dee;
+  transition: all 0.3s ease;
+  border-left: 5px solid #3f9b92;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-out;
 }
 
 .plan-day:hover {
   transform: translateY(-6px);
-  border-left: 5px solid #72a7ff;
-  box-shadow: 0px 8px 20px rgba(114, 167, 255, 0.5);
+  border-left: 5px solid #2c7a73;
+  box-shadow: 0 8px 20px rgba(63, 155, 146, 0.5);
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .filters { gap: 10px; }
+  .filters select { padding: 10px 15px; font-size: 0.9rem; }
+  .workout-plans-container { padding: 40px; }
+  .title { font-size: 2.5rem; }
+}
+
 @media (max-width: 768px) {
-  .filters {
-    flex-direction: column;
-    align-items: center;
-  }
+  .filters { flex-direction: column; align-items: center; }
+  .filters select { width: 90%; margin-bottom: 10px; }
+  .workout-plans-container { padding: 30px; }
+  .title { font-size: 2.2rem; }
+}
 
-  .filters select {
-    width: 90%;
-    margin-bottom: 10px;
-  }
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-  .workout-plans-container {
-    padding: 30px;
-  }
-
-  .title {
-    font-size: 2.2rem;
-  }
+@keyframes slideInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

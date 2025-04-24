@@ -1,108 +1,22 @@
-// // import React, { useEffect, useState } from 'react';
-// // import { useLocation } from 'react-router-dom';
-// // import './Payment.css';
-
-// // const Payment = () => {
-// //   const location = useLocation();
-// //   const { cartItems, total, discount } = location.state || {};  // Ensure cart data is passed here
-
-// //   const [paymentTotal, setPaymentTotal] = useState(0);
-
-// //   useEffect(() => {
-// //     if (cartItems && total !== undefined) {
-// //       const finalTotal = (parseFloat(total) - discount).toFixed(2);
-// //       setPaymentTotal(finalTotal);
-// //     }
-// //   }, [cartItems, total, discount]);
-
-// //   return (
-// //     <div className="payment-container">
-// //       <h2 className="payment-heading">Complete Your Purchase</h2>
-// //       <p className="payment-subheading">Securely complete your purchase with the details below.</p>
-
-// //       {cartItems && cartItems.length > 0 ? (
-// //         <>
-// //           <div className="order-summary">
-// //             <h3 className="order-summary-heading">Order Summary</h3>
-// //             <ul className="order-items">
-// //               {cartItems.map((item, index) => (
-// //                 <li key={index} className="order-item">
-// //                   <span>{item.name}</span> 
-// //                   <span>Size: {item.size}</span> 
-// //                   <span>Color: {item.color}</span> 
-// //                   <span>Quantity: {item.quantity}</span> 
-// //                   <span>{item.price}</span>
-// //                 </li>
-// //               ))}
-// //             </ul>
-
-// //             <div className="total-summary">
-// //               <div>
-// //                 <span>Total:</span> <span>${total}</span>
-// //               </div>
-// //               <div>
-// //                 <span>Discount:</span> <span>-${discount}</span>
-// //               </div>
-// //               <div className="final-total">
-// //                 <span>Final Total:</span> <span>${paymentTotal}</span>
-// //               </div>
-// //             </div>
-// //           </div>
-
-// //           <div className="payment-details">
-// //             <h3 className="payment-details-heading">Enter Payment Details</h3>
-// //             <div className="payment-form">
-// //               <label>Card Number</label>
-// //               <input type="text" placeholder="1234 5678 9012 3456" />
-              
-// //               <label>Cardholder Name</label>
-// //               <input type="text" placeholder="John Doe" />
-              
-// //               <div className="payment-date">
-// //                 <div>
-// //                   <label>Expiry Date</label>
-// //                   <input type="text" placeholder="MM/YY" />
-// //                 </div>
-// //                 <div>
-// //                   <label>CVV</label>
-// //                   <input type="text" placeholder="123" />
-// //                 </div>
-// //               </div>
-
-// //               <div className="payment-submit">
-// //                 <button className="pay-button">Pay ${paymentTotal}</button>
-// //               </div>
-// //             </div>
-// //           </div>
-// //         </>
-// //       ) : (
-// //         <div>No items in the cart.</div>
-// //       )}
-// //     </div>
-// //   );
-// // };
-
-// // export default Payment;
-
 // import React, { useEffect, useState } from 'react';
-// import { useLocation, useHistory } from 'react-router-dom'; // Using useHistory for react-router-dom v5
+// import { useLocation, useHistory } from 'react-router-dom';
 // import './Payment.css';
 
 // const Payment = () => {
 //   const location = useLocation();
-//   const { cartItems, total, discount: initialDiscount } = location.state || {}; // Ensure cart data is passed here
-//   const history = useHistory(); // Use useHistory for react-router-dom v5
+//   const { cartItems, total: initialTotal, discount: initialDiscount } = location.state || {};
+//   const history = useHistory();
 
 //   const [paymentTotal, setPaymentTotal] = useState(0);
 //   const [billingAddress, setBillingAddress] = useState({
 //     firstName: '',
 //     lastName: '',
 //     email: '',
-//     phoneNumber: '', // Ensure this is used consistently
-//     country: 'India', // Default to India
+//     phoneNumber: '',
+//     country: 'India',
 //     address: '',
 //     town: '',
-//     state: '', // Changed from region to state for clarity
+//     state: '',
 //     zipCode: ''
 //   });
 //   const [shippingAddress, setShippingAddress] = useState({
@@ -111,39 +25,53 @@
 //     lastName: '',
 //     address: '',
 //     town: '',
-//     state: '', // Changed from region to state for clarity
+//     state: '',
 //     zipCode: '',
 //     country: 'India',
 //     phone: ''
 //   });
-//   const [shippingMethod, setShippingMethod] = useState('standard'); // Default shipping method
-//   const [paymentMethod, setPaymentMethod] = useState('paypal'); // Default payment method
+//   const [shippingMethod, setShippingMethod] = useState('standard');
+//   const [paymentMethod, setPaymentMethod] = useState('paypal');
 //   const [promoCode, setPromoCode] = useState('');
-//   const [discount, setDiscount] = useState(initialDiscount || 0); // Added discount state
+//   const [discount, setDiscount] = useState(initialDiscount || 0);
 //   const [error, setError] = useState('');
 
 //   // List of Indian states for the country dropdown and state dropdown
 //   const indianStates = [
-//     'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 
-//     'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 
-//     'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 
-//     'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Andaman and Nicobar Islands', 'Chandigarh', 
+//     'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana',
+//     'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
+//     'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana',
+//     'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Andaman and Nicobar Islands', 'Chandigarh',
 //     'Dadra and Nagar Haveli and Daman and Diu', 'Lakshadweep', 'Delhi', 'Puducherry'
 //   ];
 
 //   useEffect(() => {
-//     if (cartItems && total !== undefined) {
-//       // Calculate the total based on cart items, shipping, and tax in ₹
+//     if (cartItems && initialTotal !== undefined) {
+//       console.log('Cart items in Payment:', cartItems);
+      
 //       const subtotal = cartItems.reduce((acc, item) => {
-//         let price = parseFloat(item.price.replace('₹', '').replace(/,/g, '')) || 0;
-//         return acc + (price * item.quantity);
+//         let price = 0;
+//         if (typeof item.price === 'string') {
+//           price = parseFloat(item.price.replace('₹', '').replace(/,/g, '')) || 0;
+//         } else if (typeof item.price === 'number') {
+//           price = item.price;
+//         } else if (typeof item.price === 'object' && item.price['$numberDouble']) {
+//           price = parseFloat(item.price['$numberDouble']) || 0;
+//         } else {
+//           console.warn(`Invalid price format for item ${item.name}:`, item.price);
+//           price = 0;
+//         }
+//         return acc + (price * (item.quantity || 1));
 //       }, 0);
-//       const shippingCost = shippingMethod === 'standard' ? 500.00 : 700.00; // ₹500 for standard, ₹700 for express
-//       const tax = subtotal * 0.09; // Assuming 9% GST
+
+//       const shippingCost = shippingMethod === 'standard' ? 100.00 : 150.00;
+//       const tax = subtotal * 0.09;
 //       const finalTotal = (subtotal + shippingCost + tax - discount).toFixed(2);
 //       setPaymentTotal(finalTotal);
+//     } else {
+//       setPaymentTotal(0);
 //     }
-//   }, [cartItems, total, discount, shippingMethod]);
+//   }, [cartItems, initialTotal, discount, shippingMethod]);
 
 //   const handleAddressChange = (e, type) => {
 //     const { name, value } = e.target;
@@ -164,14 +92,14 @@
 
 //   const handleApplyPromo = () => {
 //     if (promoCode === 'DISCOUNT10') {
-//       setDiscount(10); // Apply ₹10 discount
+//       setDiscount(10);
 //     } else {
-//       setDiscount(0); // Reset discount if promo code is invalid
+//       setDiscount(0);
 //       setError('Invalid promo code.');
 //     }
 //   };
 
-//   const handleSubmit = (e) => {
+//   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     if (!billingAddress.firstName || !billingAddress.lastName || !billingAddress.email || !billingAddress.phoneNumber || !billingAddress.address || !billingAddress.town || !billingAddress.state || !billingAddress.zipCode) {
 //       setError('Please fill in all billing address fields.');
@@ -181,28 +109,47 @@
 //       setError('Please fill in all shipping address fields.');
 //       return;
 //     }
-//     // Debug the state before pushing to confirm data
-//     console.log('Pushing state to PaymentConfirmation:', {
+
+//     // Prepare data for email and confirmation
+//     const orderData = {
 //       cartItems,
 //       total: paymentTotal,
 //       discount,
 //       billingAddress,
 //       shippingAddress,
 //       shippingMethod,
-//       paymentMethod
-//     });
-//     // Simulate payment processing and navigate to confirmation page
-//     history.push('/payment-confirmation', {
-//       state: {
-//         cartItems,
-//         total: paymentTotal,
-//         discount,
-//         billingAddress,
-//         shippingAddress,
-//         shippingMethod,
-//         paymentMethod
+//       paymentMethod,
+//       orderNumber: Math.floor(10000 + Math.random() * 90000)
+//     };
+
+//     // Send email to user
+//     try {
+//       const response = await fetch('http://localhost:5000/api/invoice/send-invoice', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({
+//           to: billingAddress.email,
+//           orderData,
+//         }),
+//       });
+
+//       if (!response.ok) {
+//         const errorText = await response.text();
+//         throw new Error(`Failed to send email: ${errorText}`);
 //       }
-//     });
+//       const result = await response.json();
+//       console.log('Email sent:', result);
+//     } catch (err) {
+//       console.error('Error sending email:', err);
+//       setError('Failed to send invoice email. Please try again.');
+//       return;
+//     }
+
+//     // Navigate to confirmation page
+//     console.log('Pushing state to PaymentConfirmation:', orderData);
+//     history.push('/payment-confirmation', orderData);
 //   };
 
 //   return (
@@ -254,7 +201,6 @@
 //                 onChange={(e) => handleAddressChange(e, 'billing')}
 //               >
 //                 <option value="India">India</option>
-//                 {/* Add more countries if needed, but defaulting to India */}
 //               </select>
 //               <input
 //                 type="text"
@@ -316,7 +262,7 @@
 //                     checked={shippingMethod === 'standard'}
 //                     onChange={handleShippingChange}
 //                   />
-//                   Standard Shipping ₹500.00
+//                   Standard Shipping ₹100.00
 //                 </label>
 //                 <label>
 //                   <input
@@ -325,7 +271,7 @@
 //                     checked={shippingMethod === 'express'}
 //                     onChange={handleShippingChange}
 //                   />
-//                   Express Shipping ₹700.00
+//                   Express Shipping ₹150.00
 //                 </label>
 
 //                 <div className="promo-code">
@@ -383,20 +329,57 @@
 //                 {cartItems.map((item, index) => (
 //                   <li key={index} className="order-item">
 //                     <span>{item.name}</span>
-//                     <span>Qty: {item.quantity}</span>
-//                     <span>₹{(parseFloat(item.price.replace('₹', '').replace(/,/g, '')) * item.quantity).toFixed(2)}</span>
+//                     <span>Qty: {item.quantity || 1}</span>
+//                     <span>
+//                       ₹{(
+//                         typeof item.price === 'string'
+//                           ? parseFloat(item.price.replace('₹', '').replace(/,/g, ''))
+//                           : (typeof item.price === 'number'
+//                             ? item.price
+//                             : (item.price && item.price['$numberDouble']
+//                               ? parseFloat(item.price['$numberDouble'])
+//                               : 0)
+//                           )
+//                       ).toFixed(2)}
+//                     </span>
 //                   </li>
 //                 ))}
 //               </ul>
 //               <div className="total-summary">
 //                 <div>
-//                   <span>Total Amount:</span> <span>₹{cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace('₹', '').replace(/,/g, '')) * item.quantity, 0).toFixed(2)}</span> {/* Changed to "Total Amount" */}
+//                   <span>Total Amount:</span> <span>₹{cartItems.reduce((acc, item) => {
+//                     let price = 0;
+//                     if (typeof item.price === 'string') {
+//                       price = parseFloat(item.price.replace('₹', '').replace(/,/g, '')) || 0;
+//                     } else if (typeof item.price === 'number') {
+//                       price = item.price;
+//                     } else if (typeof item.price === 'object' && item.price['$numberDouble']) {
+//                       price = parseFloat(item.price['$numberDouble']) || 0;
+//                     } else {
+//                       console.warn(`Invalid price format for item ${item.name}:`, item.price);
+//                       price = 0;
+//                     }
+//                     return acc + (price * (item.quantity || 1));
+//                   }, 0).toFixed(2)}</span>
 //                 </div>
 //                 <div>
-//                   <span>Shipping:</span> <span>₹{shippingMethod === 'standard' ? '500.00' : '700.00'}</span>
+//                   <span>Shipping:</span> <span>₹{shippingMethod === 'standard' ? '100.00' : '150.00'}</span>
 //                 </div>
 //                 <div>
-//                   <span>Sales Tax:</span> <span>₹{((cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace('₹', '').replace(/,/g, '')) * item.quantity, 0)) * 0.09).toFixed(2)}</span> {/* Assuming 9% GST */}
+//                   <span>Sales Tax:</span> <span>₹{((cartItems.reduce((acc, item) => {
+//                     let price = 0;
+//                     if (typeof item.price === 'string') {
+//                       price = parseFloat(item.price.replace('₹', '').replace(/,/g, '')) || 0;
+//                     } else if (typeof item.price === 'number') {
+//                       price = item.price;
+//                     } else if (typeof item.price === 'object' && item.price['$numberDouble']) {
+//                       price = parseFloat(item.price['$numberDouble']) || 0;
+//                     } else {
+//                       console.warn(`Invalid price format for item ${item.name}:`, item.price);
+//                       price = 0;
+//                     }
+//                     return acc + (price * (item.quantity || 1));
+//                   }, 0)) * 0.09).toFixed(2)}</span>
 //                 </div>
 //                 <div className="final-total">
 //                   <span>Grand Total:</span> <span>₹{paymentTotal}</span>
@@ -423,15 +406,16 @@
 // export default Payment;
 
 
-//adding payemnt proeprply using shop 
+
+
 import React, { useEffect, useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom'; // Using useHistory for react-router-dom v5
+import { useLocation, useHistory } from 'react-router-dom';
 import './Payment.css';
 
 const Payment = () => {
   const location = useLocation();
   const { cartItems, total: initialTotal, discount: initialDiscount } = location.state || {};
-  const history = useHistory(); // Use useHistory for react-router-dom v5
+  const history = useHistory();
 
   const [paymentTotal, setPaymentTotal] = useState(0);
   const [billingAddress, setBillingAddress] = useState({
@@ -457,54 +441,57 @@ const Payment = () => {
     phone: ''
   });
   const [shippingMethod, setShippingMethod] = useState('standard');
-  const [paymentMethod, setPaymentMethod] = useState('paypal');
+  const [paymentMethod, setPaymentMethod] = useState('razorpay');
   const [promoCode, setPromoCode] = useState('');
   const [discount, setDiscount] = useState(initialDiscount || 0);
   const [error, setError] = useState('');
 
-  // List of Indian states for the country dropdown and state dropdown
   const indianStates = [
-    'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 
-    'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 
-    'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 
-    'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Andaman and Nicobar Islands', 'Chandigarh', 
+    'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana',
+    'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
+    'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana',
+    'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Andaman and Nicobar Islands', 'Chandigarh',
     'Dadra and Nagar Haveli and Daman and Diu', 'Lakshadweep', 'Delhi', 'Puducherry'
   ];
 
   useEffect(() => {
     if (cartItems && initialTotal !== undefined) {
-      // Debug the cart items to identify the price structure
       console.log('Cart items in Payment:', cartItems);
       
-      // Calculate the total based on cart items, shipping, and tax in ₹
       const subtotal = cartItems.reduce((acc, item) => {
-        // Handle price: Ensure it's a number, not a string or object
         let price = 0;
         if (typeof item.price === 'string') {
-          // If price is a string (e.g., "₹119.53"), remove ₹ and commas
           price = parseFloat(item.price.replace('₹', '').replace(/,/g, '')) || 0;
         } else if (typeof item.price === 'number') {
-          // If price is a number (e.g., 119.53), use it directly
           price = item.price;
         } else if (typeof item.price === 'object' && item.price['$numberDouble']) {
-          // If price is in MongoDB numberDouble format (e.g., {"$numberDouble":"119.53"})
           price = parseFloat(item.price['$numberDouble']) || 0;
         } else {
           console.warn(`Invalid price format for item ${item.name}:`, item.price);
-          price = 0; // Fallback to 0 if price is invalid
+          price = 0;
         }
-
-        return acc + (price * (item.quantity || 1)); // Default quantity to 1 if not set
+        return acc + (price * (item.quantity || 1));
       }, 0);
 
-      const shippingCost = shippingMethod === 'standard' ? 100.00 : 150.00; // ₹500 for standard, ₹700 for express
-      const tax = subtotal * 0.09; // Assuming 9% GST
+      const shippingCost = shippingMethod === 'standard' ? 100.00 : 150.00;
+      const tax = subtotal * 0.09;
       const finalTotal = (subtotal + shippingCost + tax - discount).toFixed(2);
       setPaymentTotal(finalTotal);
     } else {
       setPaymentTotal(0);
     }
   }, [cartItems, initialTotal, discount, shippingMethod]);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handleAddressChange = (e, type) => {
     const { name, value } = e.target;
@@ -525,14 +512,14 @@ const Payment = () => {
 
   const handleApplyPromo = () => {
     if (promoCode === 'DISCOUNT10') {
-      setDiscount(10); // Apply ₹10 discount
+      setDiscount(10);
     } else {
-      setDiscount(0); // Reset discount if promo code is invalid
+      setDiscount(0);
       setError('Invalid promo code.');
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!billingAddress.firstName || !billingAddress.lastName || !billingAddress.email || !billingAddress.phoneNumber || !billingAddress.address || !billingAddress.town || !billingAddress.state || !billingAddress.zipCode) {
       setError('Please fill in all billing address fields.');
@@ -542,28 +529,152 @@ const Payment = () => {
       setError('Please fill in all shipping address fields.');
       return;
     }
-    // Debug the state before pushing to confirm data
-    console.log('Pushing state to PaymentConfirmation:', {
+
+    const orderData = {
       cartItems,
       total: paymentTotal,
       discount,
       billingAddress,
       shippingAddress,
       shippingMethod,
-      paymentMethod
-    });
-    // Simulate payment processing and navigate to confirmation page
-    history.push('/payment-confirmation', {
-      
-        cartItems,
-        total: paymentTotal,
-        discount,
-        billingAddress,
-        shippingAddress,
-        shippingMethod,
-        paymentMethod
-      
-    });
+      paymentMethod,
+      orderNumber: Math.floor(10000 + Math.random() * 90000)
+    };
+
+    if (paymentMethod === 'razorpay') {
+      try {
+        const response = await fetch('http://localhost:5000/api/razorpay/create-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            amount: parseFloat(paymentTotal),
+          }),
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Failed to create Razorpay order: ${errorText}`);
+        }
+
+        const { orderId, amount, currency } = await response.json();
+
+        const checkRazorpay = () => {
+          return new Promise((resolve) => {
+            const interval = setInterval(() => {
+              if (window.Razorpay) {
+                clearInterval(interval);
+                resolve();
+              }
+            }, 100);
+            setTimeout(() => {
+              clearInterval(interval);
+              resolve();
+            }, 5000);
+          });
+        };
+
+        await checkRazorpay();
+
+        if (!window.Razorpay) {
+          throw new Error('Razorpay SDK failed to load. Check your internet connection or script inclusion.');
+        }
+
+        const options = {
+          key: 'rzp_test_fFSDRoxJ7fG5R6', // Match this with .env RAZORPAY_KEY_ID
+          amount: amount,
+          currency: currency,
+          name: 'Your Store Name',
+          description: 'Order Payment',
+          order_id: orderId,
+          handler: async function (response) {
+            const verifyResponse = await fetch('http://localhost:5000/api/razorpay/verify-payment', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+              }),
+            });
+
+            if (!verifyResponse.ok) {
+              setError('Payment verification failed.');
+              return;
+            }
+
+            const emailResponse = await fetch('http://localhost:5000/api/invoice/send-invoice', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                to: billingAddress.email,
+                orderData,
+              }),
+            });
+
+            if (!emailResponse.ok) {
+              const errorText = await emailResponse.text();
+              throw new Error(`Failed to send email: ${errorText}`);
+            }
+
+            console.log('Pushing state to PaymentConfirmation:', orderData);
+            history.push('/payment-confirmation', orderData);
+          },
+          prefill: {
+            name: `${billingAddress.firstName} ${billingAddress.lastName}`,
+            email: billingAddress.email,
+            contact: billingAddress.phoneNumber,
+          },
+          theme: {
+            color: '#3399cc',
+          },
+          modal: {
+            ondismiss: function () {
+              console.log('Checkout form closed by the user');
+            }
+          }
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+          console.error('Payment failed:', response.error);
+          setError(`Payment failed: ${response.error.description}`);
+        });
+        rzp.open();
+      } catch (err) {
+        console.error('Error processing Razorpay payment:', err);
+        setError(`Failed to process payment. Please try again. Details: ${err.message}`);
+      }
+    } else {
+      try {
+        const emailResponse = await fetch('http://localhost:5000/api/invoice/send-invoice', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            to: billingAddress.email,
+            orderData,
+          }),
+        });
+
+        if (!emailResponse.ok) {
+          const errorText = await emailResponse.text();
+          throw new Error(`Failed to send email: ${errorText}`);
+        }
+
+        console.log('Pushing state to PaymentConfirmation:', orderData);
+        history.push('/payment-confirmation', orderData);
+      } catch (err) {
+        console.error('Error sending email:', err);
+        setError('Failed to send invoice email. Please try again.');
+      }
+    }
   };
 
   return (
@@ -615,7 +726,6 @@ const Payment = () => {
                 onChange={(e) => handleAddressChange(e, 'billing')}
               >
                 <option value="India">India</option>
-                {/* Add more countries if needed, but defaulting to India */}
               </select>
               <input
                 type="text"
@@ -697,12 +807,21 @@ const Payment = () => {
                     onChange={(e) => setPromoCode(e.target.value)}
                     placeholder="Enter code"
                   />
-                  <button className="apply-btn" onClick={handleApplyPromo}>Apply</button>
+                  <button className="apply-btn" onChange={handleApplyPromo}>Apply</button>
                 </div>
               </div>
 
               <div className="payment-method">
                 <h3 className="section-heading">PAYMENT</h3>
+                <label>
+                  <input
+                    type="radio"
+                    value="razorpay"
+                    checked={paymentMethod === 'razorpay'}
+                    onChange={handlePaymentChange}
+                  />
+                  Razorpay (UPI, Cards, Netbanking)
+                </label>
                 <label>
                   <input
                     type="radio"
@@ -735,6 +854,11 @@ const Payment = () => {
                     You will be redirected to the PayPal website.
                   </p>
                 )}
+                {paymentMethod === 'razorpay' && (
+                  <p className="razorpay-note" style={{ color: '#3399cc' }}>
+                    Pay securely with Razorpay (UPI, Cards, Netbanking).
+                  </p>
+                )}
               </div>
             </div>
 
@@ -747,12 +871,12 @@ const Payment = () => {
                     <span>Qty: {item.quantity || 1}</span>
                     <span>
                       ₹{(
-                        typeof item.price === 'string' 
-                          ? parseFloat(item.price.replace('₹', '').replace(/,/g, '')) 
-                          : (typeof item.price === 'number' 
-                            ? item.price 
-                            : (item.price && item.price['$numberDouble'] 
-                              ? parseFloat(item.price['$numberDouble']) 
+                        typeof item.price === 'string'
+                          ? parseFloat(item.price.replace('₹', '').replace(/,/g, ''))
+                          : (typeof item.price === 'number'
+                            ? item.price
+                            : (item.price && item.price['$numberDouble']
+                              ? parseFloat(item.price['$numberDouble'])
                               : 0)
                           )
                       ).toFixed(2)}
@@ -803,10 +927,10 @@ const Payment = () => {
               {error && <div className="error-message">{error}</div>}
               <button type="submit" className="process-order-btn">PROCESS ORDER</button>
               <div className="payment-logos">
-                <img src="/assets/images/visa.png" alt="Visa" className="payment-logo" />
-                <img src="/assets/images/mastercard.png" alt="MasterCard" className="payment-logo" />
-                <img src="/assets/images/paypal.png" alt="PayPal" className="payment-logo" />
-                <img src="/assets/images/thawte.png" alt="Thawte" className="payment-logo" />
+                <img src={`${process.env.PUBLIC_URL}/assets/images/visa.png`} alt="Visa" className="payment-logo" />
+                <img src={`${process.env.PUBLIC_URL}/assets/images/mastercard.png`} alt="MasterCard" className="payment-logo" />
+                <img src={`${process.env.PUBLIC_URL}/assets/images/paypal.png`} alt="PayPal" className="payment-logo" />
+                <img src="https://razorpay.com/assets/razorpay-logo.png" alt="Razorpay" className="payment-logo" />
               </div>
             </div>
           </div>

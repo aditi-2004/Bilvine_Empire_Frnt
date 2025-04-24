@@ -29,7 +29,7 @@ const WorkoutPlans = () => {
 
   return (
     <div className="workout-plans-container">
-      <h1 className="title">AI-Powered Workout Plan</h1>
+      <h1 className="title">Workout Plans</h1>
 
       <div className="filters">
         <select onChange={(e) => setBodyType(e.target.value)} value={bodyType}>

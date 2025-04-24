@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.d93f03a4.css",
-    "main.js": "/static/js/main.82daa004.js",
+    "main.css": "/static/css/main.b58c5283.css",
+    "main.js": "/static/js/main.3faeb746.js",
+    "static/media/home.png": "/static/media/home.82e5ed646ae40b384545.png",
+    "static/media/gym3.png": "/static/media/gym3.c9f80f3c74c97695497a.png",
+    "static/media/bilvineprt.png": "/static/media/bilvineprt.64aa8ca1a460dd95cb22.png",
+    "static/media/nutri.png": "/static/media/nutri.c14de1fb1d528a02f82e.png",
+    "static/media/home2.png": "/static/media/home2.d5ad6806c8114de73531.png",
+    "static/media/nine.png": "/static/media/nine.274fcaedd799c9aed153.png",
+    "static/media/course.png": "/static/media/course.ab9425c4d41848e80286.png",
     "index.html": "/index.html",
-    "main.d93f03a4.css.map": "/static/css/main.d93f03a4.css.map",
-    "main.82daa004.js.map": "/static/js/main.82daa004.js.map"
+    "main.b58c5283.css.map": "/static/css/main.b58c5283.css.map",
+    "main.3faeb746.js.map": "/static/js/main.3faeb746.js.map"
   },
   "entrypoints": [
-    "static/css/main.d93f03a4.css",
-    "static/js/main.82daa004.js"
+    "static/css/main.b58c5283.css",
+    "static/js/main.3faeb746.js"
   ]
 }

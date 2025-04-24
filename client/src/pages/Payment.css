@@ -235,3 +235,17 @@
   font-size: 0.9rem;
   margin-top: 10px;
 }
+
+.razorpay-note {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.payment-logos .payment-logo[src$="razorpay.png"] {
+  width: 60px;
+  height: auto;
+}
+
+.payment-logos .payment-logo {
+  margin-right: 10px;
+}

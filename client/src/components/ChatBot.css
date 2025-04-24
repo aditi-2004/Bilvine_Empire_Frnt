@@ -1,118 +1,217 @@
-/* Enhanced ChatBot.css */
+/* ChatBot.css */
 
-.chat-button {
+/* Gradient Dark Theme Background */
+.chatbot-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #00bfa5;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 50%;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  transition: background-color 0.3s;
-}
-
-.chat-button:hover {
-  background-color: #019d8a;
-}
-
-.chat-popup {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 330px;
-  max-height: 500px;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  max-height: 600px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: fadeInUp 0.3s ease-out;
-  z-index: 999;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
 }
 
+/* Chat Header with Gradient */
 .chat-header {
-  background: #00bfa5;
+  background: linear-gradient(90deg, #00bfa5, #007bff);
   color: white;
   padding: 16px;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-transform: uppercase;
 }
 
+/* Chat Messages with Animation */
 .chat-messages {
-  padding: 12px;
+  padding: 15px;
   flex: 1;
   overflow-y: auto;
-  background: #f9f9f9;
+  background: #1e1c1c;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #00bfa5 #333;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #00bfa5;
+  border-radius: 10px;
+}
+
+.chat-msg {
+  padding: 12px 16px;
+  border-radius: 15px;
+  max-width: 75%;
+  font-size: 14px;
+  animation: fadeInSlideUp 0.3s ease-out;
 }
 
 .user-msg {
   align-self: flex-end;
   background: #396752;
-  padding: 10px 14px;
-  border-radius: 18px 18px 4px 18px;
-  max-width: 80%;
-  font-size: 14px;
+  color: white;
 }
 
 .bot-msg {
   align-self: flex-start;
   background: #418151;
-  padding: 10px 14px;
-  border-radius: 18px 18px 18px 4px;
-  max-width: 80%;
-  font-size: 14px;
+  color: white;
 }
 
+/* Typing Indicator */
+.typing-indicator {
+  align-self: flex-start;
+  background: #418151;
+  color: #ccc;
+  padding: 8px 12px;
+  border-radius: 15px 15px 15px 5px;
+  font-size: 12px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+/* Suggestions with Carousel Effect */
+.suggestions {
+  padding: 10px;
+  background: #2a2a2a;
+  border-top: 1px solid #444;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.suggestions button {
+  background: #00bfa5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.suggestions button:hover {
+  background-color: #019d8a;
+  transform: scale(1.05);
+}
+
+/* Contact Button */
+.contact-button {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  background: #ff4444;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.contact-button:hover {
+  background-color: #cc0000;
+}
+
+/* Chat Input */
 .chat-input {
   display: flex;
-  border-top: 1px solid #e0e0e0;
   padding: 10px;
-  background: white;
+  background: #1e1c1c;
+  border-top: 1px solid #333;
 }
 
 .chat-input input {
   flex: 1;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: 1px solid #444;
+  border-radius: 20px;
   padding: 10px 100px;
   font-size: 14px;
-  margin-right: 10px;
+  background: #2a2a2a;
+  color: rgb(21, 17, 17);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.chat-input input:focus {
+  border-color: #00bfa5;
 }
 
 .chat-input button {
   background: #00bfa5;
   color: white;
   border: none;
-  border-radius: 100px;
-  padding: 10px 16px;
+  border-radius: 15px;
+  padding: 10px 30px;
+  margin-left: 10px;
   cursor: pointer;
   font-weight: 500;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s;
 }
 
 .chat-input button:hover {
   background-color: #019d8a;
 }
 
-@keyframes fadeInUp {
+/* Animations */
+@keyframes fadeInSlideUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.0);
   }
 }

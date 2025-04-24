@@ -65,7 +65,123 @@
 
 
 
-// src/components/ChatBot.jsx
+// // src/components/ChatBot.jsx
+// import React, { useEffect, useRef, useState } from 'react';
+// import './ChatBot.css';
+
+// const ChatBot = () => {
+//   const [messages, setMessages] = useState([]);
+//   const [input, setInput] = useState('');
+//   const [showSuggestions, setShowSuggestions] = useState(true);
+//   const chatEndRef = useRef(null);
+
+//   const scrollToBottom = () => {
+//     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+//   };
+
+//   useEffect(() => {
+//     const hour = new Date().getHours();
+//     let greeting = 'Hello';
+//     if (hour < 12) greeting = 'Good Morning 🌅';
+//     else if (hour < 17) greeting = 'Good Afternoon ☀️';
+//     else greeting = 'Good Evening 🌇';
+
+//     setMessages(prev => [
+//       ...prev,
+//       { from: 'bot', text: `${greeting}! I’m your FitLife Assistant. How can I help you today?` }
+//     ]);
+//   }, []);
+
+//   useEffect(() => {
+//     scrollToBottom();
+//   }, [messages]);
+
+//   const suggestions = [
+//     'Workout Plans',
+//     'Yoga Routines',
+//     'Diet Plans',
+//     'Other Problems'
+//   ];
+
+//   const handleSend = async () => {
+//     if (!input.trim()) return;
+//     const userMsg = { from: 'user', text: input };
+//     setMessages(prev => [...prev, userMsg]);
+//     setInput('');
+//     setShowSuggestions(false);
+
+//     try {
+//       const res = await fetch('http://localhost:5000/api/chatbot-data', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ message: input })
+//       });
+//       const data = await res.json();
+
+//       if (data?.reply) {
+//         setMessages(prev => [...prev, { from: 'bot', text: data.reply }]);
+//       } else {
+//         setMessages(prev => [
+//           ...prev,
+//           { from: 'bot', text: `Sorry, I didn't get that. Try asking about yoga, diet, or workouts.` },
+//           { from: 'bot', text: 'Need more help? ', button: true }
+//         ]);
+//       }
+//     } catch (err) {
+//       setMessages(prev => [...prev, { from: 'bot', text: 'Error connecting to server.' }]);
+//     }
+//   };
+
+//   const handleSuggestionClick = (text) => {
+//     setInput(text);
+//     handleSend();
+//   };
+
+//   return (
+//     <div className="chatbot-container">
+//       <div className="chat-header">🧘 FitLife Assistant</div>
+//       <div className="chat-messages">
+//         {messages.map((msg, i) => (
+//           <div key={i} className={`chat-msg ${msg.from}`}>
+//             {msg.text}
+//             {msg.button && (
+//               <a
+//                 className="contact-button"
+//                 href="mailto:support@fitlife.com?subject=Help&body=Please describe your issue and attach screenshots."
+//               >📩 Contact Us</a>
+//             )}
+//           </div>
+//         ))}
+//         <div ref={chatEndRef} />
+//       </div>
+
+//       {showSuggestions && (
+//         <div className="suggestions">
+//           {suggestions.map((s, idx) => (
+//             <button key={idx} onClick={() => handleSuggestionClick(s)}>{s}</button>
+//           ))}
+//         </div>
+//       )}
+
+//       <div className="chat-input">
+//         <input
+//           type="text"
+//           placeholder="Ask me anything..."
+//           value={input}
+//           onChange={(e) => setInput(e.target.value)}
+//           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+//         />
+//         <button onClick={handleSend}>Send</button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ChatBot;
+
+
+
+
 import React, { useEffect, useRef, useState } from 'react';
 import './ChatBot.css';
 
@@ -73,6 +189,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(true);
+  const [isTyping, setIsTyping] = useState(false);
   const chatEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -88,7 +205,7 @@ const ChatBot = () => {
 
     setMessages(prev => [
       ...prev,
-      { from: 'bot', text: `${greeting}! I’m your FitLife Assistant. How can I help you today?` }
+      { from: 'bot', text: `${greeting}! I’m your FitLife Assistant. How can I help you today?`, time: new Date().toLocaleTimeString() }
     ]);
   }, []);
 
@@ -105,10 +222,11 @@ const ChatBot = () => {
 
   const handleSend = async () => {
     if (!input.trim()) return;
-    const userMsg = { from: 'user', text: input };
+    const userMsg = { from: 'user', text: input, time: new Date().toLocaleTimeString() };
     setMessages(prev => [...prev, userMsg]);
     setInput('');
     setShowSuggestions(false);
+    setIsTyping(true);
 
     try {
       const res = await fetch('http://localhost:5000/api/chatbot-data', {
@@ -118,17 +236,23 @@ const ChatBot = () => {
       });
       const data = await res.json();
 
-      if (data?.reply) {
-        setMessages(prev => [...prev, { from: 'bot', text: data.reply }]);
-      } else {
-        setMessages(prev => [
-          ...prev,
-          { from: 'bot', text: `Sorry, I didn't get that. Try asking about yoga, diet, or workouts.` },
-          { from: 'bot', text: 'Need more help? ', button: true }
-        ]);
-      }
+      setTimeout(() => {
+        if (data?.reply) {
+          setMessages(prev => [...prev, { from: 'bot', text: data.reply, time: new Date().toLocaleTimeString() }]);
+        } else {
+          setMessages(prev => [
+            ...prev,
+            { from: 'bot', text: `Sorry, I didn't get that. Try asking about yoga, diet, or workouts.`, time: new Date().toLocaleTimeString() },
+            { from: 'bot', text: 'Need more help? ', button: true, time: new Date().toLocaleTimeString() }
+          ]);
+        }
+        setIsTyping(false);
+      }, 1000); // Simulate typing delay
     } catch (err) {
-      setMessages(prev => [...prev, { from: 'bot', text: 'Error connecting to server.' }]);
+      setTimeout(() => {
+        setMessages(prev => [...prev, { from: 'bot', text: 'Error connecting to server.', time: new Date().toLocaleTimeString() }]);
+        setIsTyping(false);
+      }, 1000);
     }
   };
 
@@ -142,16 +266,24 @@ const ChatBot = () => {
       <div className="chat-header">🧘 FitLife Assistant</div>
       <div className="chat-messages">
         {messages.map((msg, i) => (
-          <div key={i} className={`chat-msg ${msg.from}`}>
+          <div key={i} className={`chat-msg ${msg.from === 'user' ? 'user-msg' : 'bot-msg'}`}>
             {msg.text}
             {msg.button && (
               <a
                 className="contact-button"
                 href="mailto:support@fitlife.com?subject=Help&body=Please describe your issue and attach screenshots."
-              >📩 Contact Us</a>
+              >
+                📩 Contact Us
+              </a>
             )}
+            <div style={{ fontSize: '10px', color: '#ccc', marginTop: '5px' }}>{msg.time}</div>
           </div>
         ))}
+        {isTyping && (
+          <div className="typing-indicator">
+            <span></span><span></span><span></span> Typing...
+          </div>
+        )}
         <div ref={chatEndRef} />
       </div>
 

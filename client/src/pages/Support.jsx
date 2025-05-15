@@ -230,7 +230,7 @@ function Support() {
     setStatus('');
 
     try {
-      const response = await axios.post('/api/support', {
+      const response = await axios.post('https://gym-backend-l7s5.onrender.com/api/support', {
         name,
         email,
         message

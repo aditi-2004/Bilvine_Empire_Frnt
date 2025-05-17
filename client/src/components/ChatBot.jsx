@@ -12,7 +12,7 @@ const ChatBot = () => {
   const conversationHistoryRef = useRef([]);
 
   // OpenRouter API Key
-  const API_KEY = "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";
+  const API_KEY = "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";
 
   const scrollToBottom = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });

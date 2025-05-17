@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.262e3654.css",
-    "main.js": "/static/js/main.7b1f28ee.js",
+    "main.js": "/static/js/main.05cc62aa.js",
     "static/media/home.png": "/static/media/home.82e5ed646ae40b384545.png",
     "static/media/gym3.png": "/static/media/gym3.c9f80f3c74c97695497a.png",
     "static/media/bilvineprt.png": "/static/media/bilvineprt.64aa8ca1a460dd95cb22.png",
@@ -11,10 +11,10 @@
     "static/media/course.png": "/static/media/course.ab9425c4d41848e80286.png",
     "index.html": "/index.html",
     "main.262e3654.css.map": "/static/css/main.262e3654.css.map",
-    "main.7b1f28ee.js.map": "/static/js/main.7b1f28ee.js.map"
+    "main.05cc62aa.js.map": "/static/js/main.05cc62aa.js.map"
   },
   "entrypoints": [
     "static/css/main.262e3654.css",
-    "static/js/main.7b1f28ee.js"
+    "static/js/main.05cc62aa.js"
   ]
 }

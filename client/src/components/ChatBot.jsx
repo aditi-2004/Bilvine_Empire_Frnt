@@ -145,7 +145,7 @@ const ChatBot = () => {
             {msg.button && (
               <a
                 className="contact-button"
-                href="mailto:support@fitlife.com?subject=Help&body=Please describe your issue and attach screenshots."
+                href="mailto:aditi2914.goel@gmail.com?subject=Help&body=Please describe your issue and attach screenshots."
               >
                 📩 Contact Us
               </a>

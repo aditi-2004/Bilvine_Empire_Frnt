@@ -45,8 +45,9 @@ const App = () => {
         <Route path="/postures" component={Postures} />
         <Route path="/payment-confirmation" component={PaymentConfirmation} />
         <Route path="/yoga-meditation" component={YogaMeditation} />
-        <Route path="/chat" element={<ChatBot />} />
-        
+        {/* <Route path="/chat" element={<ChatBot />} /> */}
+        <Route path="/chat" component={ChatBot} />
+
         {/* <Route path="/FitnessPlanner" component={FitnessPlanner} /> */}
         {/* <ChatBot /> */}
         {/* <ChatbotLauncher /> Add the ChatbotLauncher component here */}
